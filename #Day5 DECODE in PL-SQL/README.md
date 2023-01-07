@@ -1,6 +1,6 @@
 ### DECODE in PL/SQL
 
-The DECODE function is a function in Oracle PL/SQL that allows you to perform IF-THEN-ELSE logic in a SQL statement. It compares an expression to one or more values and returns a result based on the comparison.
+The DECODE function is a function in Oracle PL/SQL that allows us to perform IF-THEN-ELSE logic in a SQL statement. It compares an expression to one or more values and returns a result based on the comparison.
 
 The main objective of the DECODE function is to provide a simple and efficient way to add conditional logic to a SQL query. It can be used to compare values, perform calculations, or manipulate data in a variety of ways.
 
