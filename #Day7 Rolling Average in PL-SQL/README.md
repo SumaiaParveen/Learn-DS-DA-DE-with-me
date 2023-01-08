@@ -1,6 +1,6 @@
 ### Calculating Rolling Average/Rolling Mean/Moving Average
 
-**Eaxmaple**: We want to track the daily sales of your store to identify trends and make informed decisions about inventory and marketing. However, daily sales can be volatile and hard to interpret, so you want to smooth out the data by calculating rolling averages.
+**Exmaple**: We want to track the daily sales of your store to identify trends and make informed decisions about inventory and marketing. However, daily sales can be volatile and hard to interpret, so you want to smooth out the data by calculating rolling averages.
 
 Our task is to calculate the 2-day and 7-day rolling averages for daily sales, and display the results in a way that is easy to understand and compare. This will allow us to identify trends and patterns over time, and make more informed decisions about the business.
 
