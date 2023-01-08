@@ -18,3 +18,5 @@ VALUES (1, '2022-01-01', 100),
 SELECT store_id, sale_date, total_sales,
        LAG(total_sales, 1, 0) OVER (PARTITION BY store_id ORDER BY sale_date) AS prev_sales
 FROM sales;
+
+--- The resulting table contains the store_id, sale_date, and total_sales values from the original table, along with a new prev_sales column containing the total_sales value from the preceding row within each store_id group (ordered by sale_date). If the current row is the first row within its group, the prev_sales column would contain the default value (0 in this case).
