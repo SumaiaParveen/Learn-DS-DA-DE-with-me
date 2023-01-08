@@ -40,3 +40,8 @@ Output table:
 |2022-01-08|  45           |             42.5        |        33                |
 |2022-01-09|  50           |             47.5        |        36.57             |
 |2022-01-10|  55           |             52.5        |        40                |
+
+Solution in 
+
+- [PL/SQL](https://github.com/SumaiaParveen/Learn-DS-DA-DE-with-me/blob/main/%23Day7%20Rolling%20Average%20in%20PL-SQL/Rolling%20Mean%20in%20PL-SQL.sql)
+- [Python Pandas](https://github.com/SumaiaParveen/Learn-DS-DA-DE-with-me/blob/main/%23Day7%20Rolling%20Average%20in%20PL-SQL/Rolling%20Mean%20in%20Pandas.py)
