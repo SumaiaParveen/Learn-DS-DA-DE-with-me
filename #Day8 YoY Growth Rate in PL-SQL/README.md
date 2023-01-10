@@ -20,4 +20,4 @@ Our task is to write a PL/SQL script that meets the following requirements:
 Outputs the result to the console using the DBMS_OUTPUT.PUT_LINE function.
 
 ### Solution
-- [PL/SQL]()
+- [PL/SQL](https://github.com/SumaiaParveen/Learn-DS-DA-DE-with-me/blob/main/%23Day8%20YoY%20Growth%20Rate%20in%20PL-SQL/YoY%20in%20PL-SQL.sql)
