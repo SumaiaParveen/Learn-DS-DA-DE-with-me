@@ -1,4 +1,4 @@
-### YoY (week over Week) Growth Rate
+### WoW (week over Week) Growth Rate
 
 We want to create a PL/SQL script to calculate the week over week growth rate of an e-commerce company's sales. The script should calculate the total amount of orders placed during the current week and the total amount of orders placed during the previous week, and then calculate the growth rate as a percentage. The script should output the result to the console.
 
