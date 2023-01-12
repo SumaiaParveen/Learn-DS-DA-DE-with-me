@@ -14,4 +14,4 @@ To solve this problem, we can use a combination of a calendar table and a LEFT J
 
 Solution 
 
-- [T-SQL (MS SQL Server)]()
+- [T-SQL (MS SQL Server)](https://github.com/SumaiaParveen/Learn-DS-DA-DE-with-me/blob/main/%23Day9%20Finding%20Missing%20Date%20in%20a%20Table/Finding%20Missing%20Date%20T-SQL.sql)
