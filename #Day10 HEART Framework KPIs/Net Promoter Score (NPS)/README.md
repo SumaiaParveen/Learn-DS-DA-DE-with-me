@@ -14,7 +14,7 @@ It's a widely used measure for customer satisfaction and loyalty, which is simpl
 
 - Detractors Percentage = (Detractors / (Promoters + Passives + Detractors)) x 100
 
-Here's an example how we can compute NPS and utilize in business decisions. [See the solution here.]()
+Here's an example how we can compute NPS and utilize in business decisions. [See the solution here.](https://github.com/SumaiaParveen/Learn-DS-DA-DE-with-me/blob/main/%23Day10%20HEART%20Framework%20KPIs/Net%20Promoter%20Score%20(NPS)/NPS.py)
 
 | Customer | Age | Gender | Product       | Score | Comment                |
 |----------|-----|--------|---------------|-------|------------------------|
