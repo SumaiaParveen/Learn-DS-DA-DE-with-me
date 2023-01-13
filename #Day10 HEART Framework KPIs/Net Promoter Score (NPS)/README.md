@@ -31,9 +31,11 @@ Here's an example how we can compute NPS and utilize in business decisions. [See
 
 ### Output
 
-- NPS for Laptop, NPS: 50.0, Promoters Percentage: 100.0, Passives Percentage: 0.0, Detractors Percentage: 0.0
-- NPS for Shampoo, NPS: 20.0, Promoters Percentage: 40.0, Passives Percentage: 20.0, Detractors Percentage: 40.0
-- NPS for Smartphone, NPS: -25.0, Promoters Percentage: 0.0, Passives Percentage: 25.0, Detractors Percentage: 75.0
+| Product       | NPS    | Promoters Percentage | Passives Percentage | Detractors Percentage |
+|---------------|--------|----------------------|---------------------|-----------------------|
+| Laptop        | 50.0   | 100.0                | 0.0                 | 0.0                   |
+| Shampoo       | 20.0   | 40.0                 | 20.0                | 40.0                   |
+| Smartphone    | -25.0  | 0.0                  | 25.0                | 75.0                   |
 
 From the above results, we can see that the NPS for Laptops is 50, which indicates that all of the customers who responded to the survey are "promoters". This means that all of the customers who responded to the survey are likely to recommend the product to their friends and colleagues.
 
