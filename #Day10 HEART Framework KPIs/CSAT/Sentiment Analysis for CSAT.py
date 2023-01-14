@@ -1,40 +1,37 @@
-# Import pandas library
 import pandas as pd
+from textblob import TextBlob
 
-# Define the data
+# Create a dataset with customer, age, gender, product, product category, and comment
 data = {'Customer': ['Alice','Bob','Charlie','David','Eve'],
         'Age': [25,31,35,28,22],
         'Gender':['F','M','M','M','F'],
-        'Product':['iPhone','Macbook Pro','AirPods Pro','Apple Watch Series 6','iPad'],
+        'Product':['Apple Watch Series 6','Macbook Pro','AirPods Pro','Apple Watch Series 6','iPad'],
         'Product_Category':['Electronics','Electronics','Electronics','Electronics','Electronics'],
-        'Comment':['Great product','Good performance','Not satisfied','Nice design','Could be better']
+        'Comment':['Great product','Good performance','Not satisfied','Not satisfied','Could be better']
         }
-
-# Create a dataframe from the data
 df = pd.DataFrame(data)
 
-from textblob import TextBlob
+# Add CSAT_Score column
 
-# Create an empty list to store the sentiment scores
-sentiment_scores = []
+"""applying the TextBlob library to the 'Comment' column of the dataframe. It is using the 'sentiment.polarity' method to extract the sentiment polarity of each comment, which is a value between -1 and 1 representing negative, neutral and positive sentiments respectively. The result is then assigned to a new column called 'CSAT_Score' in the dataframe."""
+df['CSAT_Score'] = df['Comment'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
-# Iterate through each comment
-for comment in df['Comment']:
-    # Use TextBlob to extract the sentiment of the comment
-    sentiment = TextBlob(comment).sentiment.polarity
-    # Assign a score based on the sentiment
-    if sentiment > 0:
-        score = 4
-    elif sentiment == 0:
-        score = 3
-    else:
-        score = 2
-    # Append the score to the list
-    sentiment_scores.append(score)
+"""applying a lambda function to the 'CSAT_Score' column, which segments the sentiment into positive, neutral, and negative by assigning scores of 4, 3, and 2 respectively. It checks if the value in the 'CSAT_Score' column is greater than 0, if so, it assigns a score of 4 for positive sentiment. If it's equal to 0, it assigns a score of 3 for neutral sentiment. If it's less than 0, it assigns a score of 2 for negative sentiment."""
+df['CSAT_Score'] = df['CSAT_Score'].apply(lambda x: 4 if x > 0 else (2 if x < 0 else 3))
 
-# Add the sentiment scores to the dataframe
-df['CSAT'] = sentiment_scores
+# Group the dataframe by product and compute the mean
+df_grouped = df.groupby(['Product']).mean()
 
-# Calculate the mean of the CSAT column to get the overall CSAT score
-csat_score = df['CSAT'].mean()
-print("CSAT Score:", csat_score)
+# Reset the index
+df_grouped = df_grouped.reset_index()
+
+# Add CSAT_Percentage column
+df_grouped['CSAT_Percentage'] = df_grouped['CSAT_Score']*100
+
+# Print the input table
+print("Input Table:")
+display(df)
+
+# Print the output table
+print("Output Table:")
+display(df_grouped)
