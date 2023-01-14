@@ -59,7 +59,13 @@ The choice of method will depend on the specific needs of the analysis and the d
 
 The CSAT (Customer Satisfaction Score) was calculated by using the TextBlob library to classify the customer's comments as positive or negative.
 
-The TextBlob library uses a pre-trained model to classify the sentiment of a given text as positive or negative. Based on the example provided, The function calculate_csat was used to calculate the score for each customer's comment, a score of greater than 0 is considered as positive and less than 0 is considered as negative.
+The TextBlob library uses a pre-trained model to classify the sentiment of a given text as positive or negative. It extracts the sentiment of each customer's comment, and assigns a score of 4 for positive sentiment, 3 for neutral sentiment, and 2 for negative sentiment. This score is added to the dataset as the "CSAT_Score" column.
+
+The dataset is then grouped by product, and for each group, the average CSAT score and the percentage of comments that have a score of 4 (positive sentiment) are calculated and added to a list.
+
+The percentage for AirPods Pro is 0% which indicates that none of the comments for the Airpods pro are positive,
+and the percentage for Apple Watch Series 6 is 50% which indicates that half of the comments are positive while the other half are not,
+and the percentage for Macbook Pro and iPad are 100% which indicates that all the comments are positive.
 
 *It's important to note that this is a simple way to calculate the CSAT score using TextBlob, the score might not be accurate for all cases and you might want to consider using other libraries or techniques to perform a more accurate sentiment analysis.*
 
