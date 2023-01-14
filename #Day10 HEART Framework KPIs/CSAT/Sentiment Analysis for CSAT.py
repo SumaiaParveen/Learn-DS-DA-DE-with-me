@@ -1,7 +1,7 @@
 import pandas as pd
 from textblob import TextBlob
 
-# Create a dataset with customer, age, gender, product, product category, and comment
+# Create a dummy dataset
 data = {'Customer': ['Alice','Bob','Charlie','David','Eve'],
         'Age': [25,31,35,28,22],
         'Gender':['F','M','M','M','F'],
@@ -11,27 +11,23 @@ data = {'Customer': ['Alice','Bob','Charlie','David','Eve'],
         }
 df = pd.DataFrame(data)
 
-# Add CSAT_Score column
-
-"""applying the TextBlob library to the 'Comment' column of the dataframe. It is using the 'sentiment.polarity' method to extract the sentiment polarity of each comment, which is a value between -1 and 1 representing negative, neutral and positive sentiments respectively. The result is then assigned to a new column called 'CSAT_Score' in the dataframe."""
+# Use TextBlob to extract the sentiment of the comment
 df['CSAT_Score'] = df['Comment'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
-"""applying a lambda function to the 'CSAT_Score' column, which segments the sentiment into positive, neutral, and negative by assigning scores of 4, 3, and 2 respectively. It checks if the value in the 'CSAT_Score' column is greater than 0, if so, it assigns a score of 4 for positive sentiment. If it's equal to 0, it assigns a score of 3 for neutral sentiment. If it's less than 0, it assigns a score of 2 for negative sentiment."""
+# Assign a score based on the sentiment
 df['CSAT_Score'] = df['CSAT_Score'].apply(lambda x: 4 if x > 0 else (2 if x < 0 else 3))
 
-# Group the dataframe by product and compute the mean
-df_grouped = df.groupby(['Product']).mean()
+# group the dataset by product
+grouped = df.groupby(['Product'])
 
-# Reset the index
-df_grouped = df_grouped.reset_index()
+# Create a list to store the data
+data = []
 
-# Add CSAT_Percentage column
-df_grouped['CSAT_Percentage'] = df_grouped['CSAT_Score']*100
+# Iterate through each group
+for name, group in grouped:
+    csat_score = group['CSAT_Score'].mean()
+    csat_percentage = (group['CSAT_Score'] == 4).sum() / group.shape[0] * 100
+    data.append([name, csat_score,csat_percentage])
 
-# Print the input table
-print("Input Table:")
-display(df)
-
-# Print the output table
-print("Output Table:")
-display(df_grouped)
+# Create a dataframe from the data
+df_results = pd.DataFrame(data, columns=['Product', 'CSAT_Score','CSAT_Percentage'])
