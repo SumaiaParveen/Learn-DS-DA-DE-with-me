@@ -27,10 +27,10 @@ We want to calculate CSAT from this dataset:
 
 | Customer | Age | Gender | Product              | Product Category | Comment          |
 |----------|-----|--------|----------------------|------------------|------------------|
-| Alice    | 25  | F      | iPhone               | Electronics      | Great product    |
+| Alice    | 25  | F      | Apple Watch Series 6 | Electronics      | Great product    |
 | Bob      | 31  | M      | Macbook Pro          | Electronics      | Good performance |
 | Charlie  | 35  | M      | AirPods Pro          | Electronics      | Not satisfied    |
-| David    | 28  | M      | Apple Watch Series 6 | Electronics      | Nice design      |
+| David    | 28  | M      | Apple Watch Series 6 | Electronics      | Not satisfied    |
 | Eve      | 22  | F      | iPad                 | Electronics      | Could be better  |
 
 there are several ways to calculate the CSAT (Customer Satisfaction Score) from a dataset, such as:
@@ -45,24 +45,21 @@ there are several ways to calculate the CSAT (Customer Satisfaction Score) from 
 
 The choice of method will depend on the specific needs of the analysis and the data available.
 
-*We will compute the CSAT score using the 'Comment' column in Python.* [See the full solution here.]()
+*We will compute the CSAT score using the 'Comment' column in Python.* [See the full solution here.](https://github.com/SumaiaParveen/Learn-DS-DA-DE-with-me/blob/main/%23Day10%20HEART%20Framework%20KPIs/CSAT/Sentiment%20Analysis%20for%20CSAT.py)
 
 ### Output
 
-| Customer | Age | Gender | Product              | Product_Category | Comment          | CSAT_Score | CSAT_Percentage |
-|----------|-----|--------|----------------------|------------------|------------------|------------|-----------------|
-| Alice    | 25  | F      | iPhone               | Electronics      | Great product    | 1          | 60.0            |
-| Bob      | 31  | M      | Macbook Pro          | Electronics      | Good performance | 1          | 60.0            |
-| Charlie  | 35  | M      | AirPods Pro          | Electronics      | Not satisfied    | 0          | 60.0            |
-| David    | 28  | M      | Apple Watch Series 6 | Electronics      | Nice design      | 1          | 60.0            |
-| Eve      | 22  | F      | iPad                 | Electronics      | Could be better  | 0          | 60.0            |
+|              Product |  Age | CSAT_Score | CSAT_Percentage | 
+|---------------------:|-----:|-----------:|----------------:|
+|          AirPods Pro | 35.0 |        2.0 |           0.0 |   
+| Apple Watch Series 6 | 26.5 |        3.0 |           50.0 |   
+|          Macbook Pro | 31.0 |        4.0 |           100.0 |   
+|                 iPad | 22.0 |        4.0 |           100.0 |   
 
 
 The CSAT (Customer Satisfaction Score) was calculated by using the TextBlob library to classify the customer's comments as positive or negative.
 
 The TextBlob library uses a pre-trained model to classify the sentiment of a given text as positive or negative. Based on the example provided, The function calculate_csat was used to calculate the score for each customer's comment, a score of greater than 0 is considered as positive and less than 0 is considered as negative.
-
-The final dataframe shows that there are 4 positive comments and 2 negative comments, which gives an overall CSAT percentage of 80%. This means that 80% of the customers are satisfied with the product or service.
 
 *It's important to note that this is a simple way to calculate the CSAT score using TextBlob, the score might not be accurate for all cases and you might want to consider using other libraries or techniques to perform a more accurate sentiment analysis.*
 
