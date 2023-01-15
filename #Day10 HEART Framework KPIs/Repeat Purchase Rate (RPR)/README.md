@@ -32,8 +32,6 @@ How to compute RPR of products from the following dataset?
 - Step1: Creating labels whether the orders are repeat or new
 - Step2: Calculating RPR = (Number of Repeat Purchases of a Product) / (Total Number of Purchases of a Product)
 
-It is a metric that measures the percentage of customers that have made a repeat purchase of a specific product. It is calculated by taking the number of repeat purchases of a product and dividing it by the total number of purchases of that product. The resulting percentage represents the RPR of the product, with a higher percentage indicating a higher rate of repeat purchases for that product.
-
 #### Output
 
 |    Product |      RPR |
