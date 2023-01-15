@@ -1,4 +1,4 @@
-### Repeat Purchase Rate (RPP)
+### Repeat Purchase Rate (RPR)
 
 #### RPR of Products
 
